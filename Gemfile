@@ -12,6 +12,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'coffee-script-source', '1.8.0'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootswatch-rails'
+
 group :development, :test do
   gem 'byebug'
 end
