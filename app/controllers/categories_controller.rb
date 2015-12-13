@@ -1,3 +1,3 @@
-CategoriesController < ApplicationController
+class CategoriesController < ApplicationController
 
 end

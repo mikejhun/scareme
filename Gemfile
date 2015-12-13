@@ -14,6 +14,10 @@ gem 'devise'
 gem 'coffee-script-source', '1.8.0'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'bootswatch-rails'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+
 
 group :development, :test do
   gem 'byebug'

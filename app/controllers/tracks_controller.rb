@@ -1,7 +1,7 @@
 class TracksController < ApplicationController
-
+	before_action :authenticate_user!, only: [:new, :create, :upvote, :downvote]
 	def index
-
+		@tracks = Track.all.order(id: :desc).page(params[:page]).per(15)
 	end
 
 	def new
@@ -10,6 +10,7 @@ class TracksController < ApplicationController
 	
 	def create
 		@track = Track.new(track_params)
+		@track.user = current_user
 		if @track.save
 			redirect_to @track
 		else
@@ -20,6 +21,18 @@ class TracksController < ApplicationController
 
 	def show
 		@track = Track.find(params[:id])
+	end
+
+	def upvote
+		@track = Track.find(params[:id])
+		@track.upvote_by(current_user)
+		redirect_to :back
+	end
+
+	def downvote
+		@track = Track.find(params[:id])
+		@track.downvote_by(current_user)
+		redirect_to :back
 	end
 
 	private
