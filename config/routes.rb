@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   get '/toptracks', to: 'pages#toptracks', as: 'toptracks'
   get '/randomtracks', to: 'pages#randomtracks', as: 'randomtracks'
+  get '/category/:id', to: 'categories#show', as: 'category'
 end
