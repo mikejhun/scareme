@@ -21,6 +21,7 @@ class TracksController < ApplicationController
 
 	def show
 		@track = Track.find(params[:id])
+		@comments = @track.comments.order(id: :desc)
 	end
 
 	def upvote
