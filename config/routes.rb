@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   		put :like, to:'tracks#upvote'
   		put :dislike, to:'tracks#downvote'
   	end
+    collection do
+      get :search
+    end
   end
 
   root 'tracks#index'

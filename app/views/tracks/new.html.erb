@@ -4,8 +4,12 @@
 			<h3>Post a Track</h3>
 			<%= form_for @track do |a| %>
 				<div class='form-group'>
-				<%= a.label :body, 'Track Description' %>
-				<%= a.text_area :body, rows: 3, class: 'form-control' %>
+					<%= a.label :body, 'Track Description' %>
+					<%= a.text_area :body, rows: 3, class: 'form-control' %>
+				</div>
+				<div class='form-group'>
+					<%= a.label :category_id %>
+					<%= a.select(:category_id, Category.all.map{ |a| [a.name, a.id] }, {}, { class: 'form-control', id: 'select'}) %>
 				</div>
 				<%= a.submit class: 'btn btn-primary' %>
 			<% end %>

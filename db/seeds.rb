@@ -18,3 +18,11 @@ user = User.create(email: 'mike@mike.com', password: 'Redbull5', name: 'Mike The
 30.times do 
 	Track.create(body: 'First Track', user_id: 1, category_id: rand(1..6))
 end
+
+2.times do 
+	Track.create(body: 'Cookie', user_id: 1, category_id: rand(1..2))
+end
+
+2.times do 
+	Track.create(body: 'aPpLe', user_id: 1, category_id: rand(3..4))
+end

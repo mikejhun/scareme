@@ -36,6 +36,14 @@ class TracksController < ApplicationController
 		redirect_to :back
 	end
 
+	def search
+		if params[:search].blank?
+			@tracks = Track.all
+		else
+			@tracks = Track.search(params)
+		end
+	end
+
 	private
 		def track_params
 			params.require(:track).permit(:body)
